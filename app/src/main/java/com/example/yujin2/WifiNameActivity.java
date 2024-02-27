@@ -34,12 +34,14 @@ public class WifiNameActivity extends AppCompatActivity {
         }
 
         List<ScanResult> result = wifiManager.getScanResults();
+        int rssi = wifiManager.getConnectionInfo().getRssi();
         Button btnScan = findViewById(R.id.btnScan);
         btnScan.setOnClickListener(v -> {
+            TextView textView = findViewById(R.id.showpanel);
             for (ScanResult scanResult : result) {
-                TextView textView = findViewById(R.id.showpanel);
                 textView.append("WIFI_RESULT" + "SSID : " + scanResult.SSID + " BSSID : " + scanResult.BSSID + "\n");
             }
+            textView.append("RSSI: " + rssi + "\n");
         });
 
         Button btnToHome = findViewById(R.id.tohome);

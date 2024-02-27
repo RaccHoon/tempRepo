@@ -2,6 +2,7 @@ package com.example.yujin2;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Debug;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +19,14 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, WifiNameActivity.class);
             startActivity(intent);
             finish();
+        });
+
+        Button rssiButton = findViewById(R.id.rssiButton);
+
+        rssiButton.setOnClickListener(v -> {
+//            Intent intent = new Intent(MainActivity.this, RssiManagerActivity.class);
+//            startActivity(intent);
+//            finish();
         });
     }
 }
